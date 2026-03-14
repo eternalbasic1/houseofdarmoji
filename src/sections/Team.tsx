@@ -1,5 +1,31 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Code2, GraduationCap, Briefcase } from 'lucide-react';
+import { Code2, GraduationCap, Briefcase, Link2, MessageCircle } from 'lucide-react';
+
+// Inline SVGs for brand icons (lucide-react brand icons are deprecated)
+const GithubIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+  </svg>
+);
+
+const LinkedInIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const XIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const socialIcons = [
+  { Icon: GithubIcon, label: 'GitHub' },
+  { Icon: LinkedInIcon, label: 'LinkedIn' },
+  { Icon: XIcon, label: 'X / Twitter' },
+];
 
 const team = [
   {
@@ -10,11 +36,11 @@ const team = [
     gradient: 'from-violet-500 via-indigo-500 to-blue-600',
     ring: 'ring-violet-500/30',
     glow: 'shadow-violet-900/50',
-    bio: 'Seasoned full-stack engineer with 3 years of industry experience. Passionate about building scalable solutions and now channeling technical expertise into business innovation.',
+    bio: 'A seasoned full-stack engineer with 3+ years of industry experience. Passionate about building scalable, impactful products — and now channelling that technical depth into entrepreneurial innovation.',
     tags: [
       { icon: Briefcase, label: '3+ Years Experience' },
       { icon: Code2, label: 'Full Stack' },
-      { icon: Briefcase, label: 'Tech Lead' },
+      { icon: Link2, label: 'Tech Lead' },
     ],
     tagColor: 'bg-violet-500/10 text-violet-300 border-violet-500/20',
   },
@@ -26,11 +52,11 @@ const team = [
     gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
     ring: 'ring-emerald-500/30',
     glow: 'shadow-emerald-900/50',
-    bio: 'Final year Computer Science student with a fresh perspective on technology and business. Brings academic knowledge, youthful energy, and innovative thinking to our entrepreneurial journey.',
+    bio: 'A final-year Computer Science (AI & ML) student with a sharp eye for emerging technology and business opportunity. He brings academic rigour, fresh thinking, and boundless energy to every venture.',
     tags: [
       { icon: GraduationCap, label: 'CSE (AI & ML)' },
       { icon: Code2, label: 'Tech Savvy' },
-      { icon: Briefcase, label: 'Future Ready' },
+      { icon: MessageCircle, label: 'Future Ready' },
     ],
     tagColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
   },
@@ -40,7 +66,7 @@ export default function Team() {
   return (
     <section id="team" className="py-28 px-6 relative overflow-hidden">
       {/* Ambient */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-indigo-600/5 blur-[120px] pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-1/2 right-0 w-125 h-125 rounded-full bg-indigo-600/5 blur-[120px] pointer-events-none -translate-y-1/2" />
 
       <div className="max-w-6xl mx-auto">
         {/* Label */}
@@ -50,7 +76,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="flex items-center gap-3 mb-5"
         >
-          <div className="h-px w-12 bg-gradient-to-r from-violet-500 to-transparent" />
+          <div className="h-px w-12 bg-linear-to-r from-violet-500 to-transparent" />
           <span className="text-xs font-semibold tracking-widest text-violet-400 uppercase">
             The Team
           </span>
@@ -62,7 +88,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-white mb-4"
         >
-          Meet the <span className="gradient-text">Dreamers</span>
+          Meet the <span className="gradient-text">Founders</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -71,8 +97,8 @@ export default function Team() {
           transition={{ delay: 0.1 }}
           className="text-gray-400 max-w-xl mb-16"
         >
-          Two cousins united by technology, driven by ambition, and ready to conquer the business
-          world one venture at a time.
+          Two cousins united by technology, fuelled by ambition, and determined to make their mark
+          on the business world — one venture at a time.
         </motion.p>
 
         {/* Cards */}
@@ -87,13 +113,13 @@ export default function Team() {
               className="glass rounded-3xl p-8 relative overflow-hidden group hover:border-white/12 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Card glow on hover */}
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${member.gradient} opacity-[0.03] rounded-3xl`} />
+              <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.07] transition-opacity duration-500 bg-linear-to-br ${member.gradient} rounded-3xl`} />
 
               <div className="relative">
                 {/* Avatar + info */}
                 <div className="flex items-start gap-5 mb-6">
                   <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-xl font-bold text-white ring-4 ${member.ring} shadow-2xl ${member.glow} flex-shrink-0`}
+                    className={`w-16 h-16 rounded-2xl bg-linear-to-br ${member.gradient} flex items-center justify-center text-xl font-bold text-white ring-4 ${member.ring} shadow-2xl ${member.glow} shrink-0`}
                   >
                     {member.avatar}
                   </div>
@@ -125,12 +151,13 @@ export default function Team() {
 
                 {/* Social links */}
                 <div className="flex gap-3">
-                  {[Github, Linkedin, Twitter].map((Icon, j) => (
+                  {socialIcons.map(({ Icon, label }) => (
                     <button
-                      key={j}
+                      key={label}
+                      aria-label={label}
                       className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-500 hover:text-white hover:border-violet-500/40 transition-all duration-200 hover:scale-110"
                     >
-                      <Icon size={15} />
+                      <Icon />
                     </button>
                   ))}
                 </div>
@@ -147,11 +174,10 @@ export default function Team() {
           transition={{ delay: 0.3 }}
           className="mt-12 glass rounded-2xl p-8 text-center border border-violet-500/10"
         >
-          <div className="text-2xl font-bold text-white mb-2">Perfect Synergy</div>
+          <div className="text-2xl font-bold text-white mb-2">Better Together</div>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
-            Together, we combine industry experience with fresh academic insights, creating a unique
-            blend of practical knowledge and innovative thinking that drives our entrepreneurial
-            adventures.
+            Industry experience meets academic curiosity. Practical execution meets fresh perspective.
+            Together, we cover more ground — and learn faster.
           </p>
         </motion.div>
       </div>
