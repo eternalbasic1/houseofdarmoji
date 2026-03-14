@@ -105,7 +105,7 @@ export default function Team() {
         </motion.p>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
@@ -170,6 +170,27 @@ export default function Team() {
               </div>
             </motion.div>
           ))}
+
+          {/* Placeholder — future team member */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="rounded-3xl p-8 border-2 border-dashed border-white/10 flex flex-col items-center justify-center text-center gap-4 min-h-80 hover:border-violet-500/30 transition-colors duration-300 group"
+          >
+            <div className="w-16 h-16 rounded-2xl border-2 border-dashed border-white/10 group-hover:border-violet-500/30 flex items-center justify-center transition-colors duration-300">
+              <span className="text-2xl text-white/20 group-hover:text-violet-400/50 transition-colors duration-300 font-bold">+</span>
+            </div>
+            <div>
+              <p className="text-white/40 font-semibold text-sm group-hover:text-white/60 transition-colors duration-300">
+                Growing the Team
+              </p>
+              <p className="text-white/20 text-xs mt-1 group-hover:text-white/40 transition-colors duration-300">
+                More great people joining soon
+              </p>
+            </div>
+          </motion.div>
         </div>
 
         {/* Synergy callout */}
