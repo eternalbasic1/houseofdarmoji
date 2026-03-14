@@ -28,8 +28,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center text-sm font-bold shadow-lg group-hover:scale-105 transition-transform">
-            HD
+          <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform ring-1 ring-white/10">
+            <img src="/logo.png" alt="House of Darmoji logo" className="w-7 h-7 object-contain" />
           </div>
           <span className="font-semibold text-white tracking-tight">
             House of <span className="text-violet-400">Darmoji</span>

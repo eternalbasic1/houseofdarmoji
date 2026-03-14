@@ -6,9 +6,9 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background ambient blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-violet-600/10 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-indigo-600/10 blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-emerald-600/5 blur-[160px]" />
+        <div className="absolute top-1/4 left-1/4 w-150 h-150 rounded-full bg-violet-600/10 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-125 h-125 rounded-full bg-indigo-600/10 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full bg-emerald-600/5 blur-[160px]" />
       </div>
 
       {/* Grid pattern */}
@@ -21,11 +21,26 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        {/* Logo mark */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="flex justify-center mb-8"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-violet-500/20 blur-2xl scale-150" />
+            <div className="relative w-28 h-28 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl shadow-violet-900/30 backdrop-blur-sm">
+              <img src="/logo.png" alt="House of Darmoji" className="w-20 h-20 object-contain" />
+            </div>
+          </div>
+        </motion.div>
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-violet-500/20 text-sm text-violet-300 mb-8"
         >
           <Sparkles size={14} className="text-violet-400" />
@@ -116,7 +131,7 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 0.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <div className="w-px h-12 bg-gradient-to-b from-transparent via-violet-500/50 to-transparent animate-pulse" />
+        <div className="w-px h-12 bg-linear-to-b from-transparent via-violet-500/50 to-transparent animate-pulse" />
       </motion.div>
     </section>
   );
