@@ -21,42 +21,45 @@ const XIcon = () => (
   </svg>
 );
 
-const socialIcons = [
-  { Icon: GithubIcon, label: 'GitHub' },
-  { Icon: LinkedInIcon, label: 'LinkedIn' },
-  { Icon: XIcon, label: 'X / Twitter' },
-];
-
 const team = [
   {
     name: 'Vineeth Reddy',
     surname: 'Kancharakuntla',
-    role: 'Co-Founder & Full Stack Engineer',
+    role: 'Co-Founder · Full Stack Engineer',
     avatar: 'VR',
     gradient: 'from-violet-500 via-indigo-500 to-blue-600',
     ring: 'ring-violet-500/30',
     glow: 'shadow-violet-900/50',
-    bio: 'A seasoned full-stack engineer with 3+ years of industry experience. Passionate about building scalable, impactful products — and now channelling that technical depth into entrepreneurial innovation.',
+    bio: 'Full-stack engineer with professional industry experience building scalable systems and production-grade applications. Now directing that technical depth toward rapid product development and venture creation.',
     tags: [
       { icon: Briefcase, label: '3+ Years Experience' },
       { icon: Code2, label: 'Full Stack' },
       { icon: Link2, label: 'Tech Lead' },
     ],
     tagColor: 'bg-violet-500/10 text-violet-300 border-violet-500/20',
+    socials: [
+      { Icon: GithubIcon, label: 'GitHub', href: 'https://github.com/eternalbasic1' },
+      { Icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/kancharakuntlavineethreddy/' },
+      { Icon: XIcon, label: 'X', href: 'https://x.com/KancharakuntlaV' },
+    ],
   },
   {
     name: 'Aadarsh Reddy',
     surname: 'Depa',
-    role: 'Co-Founder & Tech Enthusiast',
+    role: 'Co-Founder · AI/ML Engineer',
     avatar: 'AD',
     gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
     ring: 'ring-emerald-500/30',
     glow: 'shadow-emerald-900/50',
-    bio: 'A final-year Computer Science (AI & ML) student with a sharp eye for emerging technology and business opportunity. He brings academic rigour, fresh thinking, and boundless energy to every venture.',
+    bio: 'Computer Science (AI & ML) specialist focused on emerging technologies and applied artificial intelligence. Brings analytical thinking, research depth, and a sharp instinct for identifying technology-driven opportunities.',
     tags: [
       { icon: GraduationCap, label: 'CSE (AI & ML)' },
       { icon: Code2, label: 'Tech Savvy' },
       { icon: MessageCircle, label: 'Future Ready' },
+    ],
+    socials: [
+      { Icon: GithubIcon, label: 'GitHub', href: 'https://github.com/aadarshreddydepa' },
+      { Icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aadarsh-reddy-depa-19b88722b/' },
     ],
     tagColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
   },
@@ -151,14 +154,17 @@ export default function Team() {
 
                 {/* Social links */}
                 <div className="flex gap-3">
-                  {socialIcons.map(({ Icon, label }) => (
-                    <button
+                  {member.socials.map(({ Icon, label, href }) => (
+                    <a
                       key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={label}
                       className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-500 hover:text-white hover:border-violet-500/40 transition-all duration-200 hover:scale-110"
                     >
                       <Icon />
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>

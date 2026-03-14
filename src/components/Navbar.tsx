@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: 'Story', href: '#story' },
-  { label: 'Team', href: '#team' },
-  { label: 'Challenge', href: '#challenge' },
-  { label: 'Philosophy', href: '#philosophy' },
-  { label: 'Contact', href: '#contact' },
+  { label: "What We Do", href: "#what-we-do" },
+  { label: "Story", href: "#story" },
+  { label: "Team", href: "#team" },
+  { label: "Challenge", href: "#challenge" },
+  { label: "Philosophy", href: "#philosophy" },
 ];
 
 export default function Navbar() {
@@ -15,21 +15,27 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'py-3 bg-[#080B14]/90 backdrop-blur-md border-b border-white/5' : 'py-5'
+        scrolled
+          ? "py-3 bg-[#080B14]/90 backdrop-blur-md border-b border-white/5"
+          : "py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform ring-1 ring-white/10">
-            <img src="/logo.png" alt="House of Darmoji logo" className="w-7 h-7 object-contain" />
+            <img
+              src="/logo.png"
+              alt="House of Darmoji logo"
+              className="w-7 h-7 object-contain"
+            />
           </div>
           <span className="font-semibold text-white tracking-tight">
             House of <span className="text-violet-400">Darmoji</span>
@@ -42,7 +48,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-400 hover:text-white transition-colors duration-200 relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-px after:bg-violet-400 after:transition-all hover:after:w-full"
+              className="text-sm text-gray-400 hover:text-white transition-colors duration-200 relative after:absolute after:-bottom-0.5 after:left-0 after:w-0 after:h-px after:bg-violet-400 after:transition-all hover:after:w-full"
             >
               {link.label}
             </a>

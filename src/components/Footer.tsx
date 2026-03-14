@@ -60,7 +60,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-gray-600 text-xs leading-relaxed mb-5">
-              Building the future, one venture at a time. From Hyderabad to the world.
+              Building and validating technology-driven ventures. From Hyderabad to the world.
             </p>
             <div className="flex gap-2">
               {socials.map((s) => (
@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-gray-600 text-xs">
-            © {new Date().getFullYear()} House of Darmoji. Building the future, one business at a time.
+            © {new Date().getFullYear()} House of Darmoji. Building and validating technology-driven ventures.
           </p>
           <a
             href="https://houseofdarmoji.com"

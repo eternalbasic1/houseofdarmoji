@@ -13,17 +13,17 @@ const categories = [
 ];
 
 const steps = [
-  { num: '01', title: 'Ideate', desc: 'Research the market and identify a real problem worth solving.' },
-  { num: '02', title: 'Build', desc: 'Rapidly prototype using our tech skills to create an MVP.' },
-  { num: '03', title: 'Launch', desc: 'Put it in front of real customers and gather feedback.' },
-  { num: '04', title: 'Learn', desc: 'Analyze results, extract lessons, and decide pivot or kill.' },
+  { num: '01', title: 'Problem Discovery', desc: 'Research the market and identify a genuine problem with real demand.' },
+  { num: '02', title: 'Rapid Build', desc: 'Prototype quickly using our engineering skills to produce a working MVP.' },
+  { num: '03', title: 'Market Launch', desc: 'Deploy to real users and gather structured feedback from day one.' },
+  { num: '04', title: 'Evaluate & Decide', desc: 'Analyse results with data. Scale what works, shut down what does not.' },
 ];
 
 export default function Challenge() {
   return (
     <section id="challenge" className="py-28 px-6 relative overflow-hidden">
       {/* Ambient */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-violet-600/8 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-175 h-100 rounded-full bg-violet-600/8 blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Label */}
@@ -33,7 +33,7 @@ export default function Challenge() {
           viewport={{ once: true }}
           className="flex items-center gap-3 mb-5"
         >
-          <div className="h-px w-12 bg-gradient-to-r from-amber-500 to-transparent" />
+          <div className="h-px w-12 bg-linear-to-r from-amber-500 to-transparent" />
           <span className="text-xs font-semibold tracking-widest text-amber-400 uppercase">
             The Challenge
           </span>
@@ -52,7 +52,7 @@ export default function Challenge() {
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                 Business Models
                 <br />
-                <span className="text-gray-400 font-normal text-3xl">to Explore</span>
+                <span className="text-gray-400 font-normal text-3xl">to Build & Validate</span>
               </h2>
             </motion.div>
 
@@ -61,11 +61,21 @@ export default function Challenge() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-gray-400 leading-relaxed mb-10"
+              className="text-gray-400 leading-relaxed mb-3"
             >
-              Our ambitious goal is to explore 25 different business models over the coming years.
-              Not all will succeed, but each will teach us something valuable about entrepreneurship,
-              markets, and building sustainable businesses.
+              Our goal is to systematically explore 25 different business models across industries.
+              Not every venture will succeed — but each will generate insight that improves the next.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="text-gray-500 text-sm leading-relaxed mb-10 italic"
+            >
+              Each venture follows a structured validation framework — designed to test ideas quickly
+              while minimising risk and maximising learning.
             </motion.p>
 
             {/* Process steps */}
@@ -79,7 +89,7 @@ export default function Challenge() {
                   transition={{ delay: i * 0.1 }}
                   className="flex gap-4 items-start"
                 >
-                  <div className="text-2xl font-black text-white/10 w-10 flex-shrink-0 leading-none mt-1">
+                  <div className="text-2xl font-black text-white/10 w-10 shrink-0 leading-none mt-1">
                     {step.num}
                   </div>
                   <div>
@@ -108,7 +118,7 @@ export default function Challenge() {
                 transition={{ delay: 0.05 * i }}
                 className="glass glass-hover rounded-2xl p-5 flex items-center gap-3"
               >
-                <div className={`w-10 h-10 rounded-xl ${cat.bg} flex items-center justify-center flex-shrink-0`}>
+                <div className={`w-10 h-10 rounded-xl ${cat.bg} flex items-center justify-center shrink-0`}>
                   <cat.icon size={18} className={cat.color} />
                 </div>
                 <span className="text-sm text-gray-300 font-medium">{cat.label}</span>
@@ -127,12 +137,12 @@ export default function Challenge() {
         >
           <div className="flex justify-between items-end mb-4">
             <div>
-              <div className="text-white font-semibold mb-1">Journey Progress</div>
-              <div className="text-gray-500 text-sm">Just getting started — the best is yet to come</div>
+              <div className="text-white font-semibold mb-1">Venture Progress</div>
+              <div className="text-gray-500 text-sm">Actively in progress — each venture builds on the last</div>
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold gradient-text-warm">0 / 25</div>
-              <div className="text-gray-600 text-xs">Ventures explored</div>
+              <div className="text-gray-600 text-xs">Ventures completed</div>
             </div>
           </div>
           <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
@@ -141,12 +151,12 @@ export default function Challenge() {
               whileInView={{ width: '4%' }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"
+              className="h-full bg-linear-to-r from-amber-500 to-orange-500 rounded-full"
             />
           </div>
           <div className="flex justify-between text-xs text-gray-600 mt-2">
             <span>Start</span>
-            <span>25 Businesses</span>
+            <span>25 Ventures</span>
           </div>
         </motion.div>
       </div>

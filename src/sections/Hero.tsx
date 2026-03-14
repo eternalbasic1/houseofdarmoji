@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Sparkles } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowRight, FlaskConical } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
+          backgroundSize: "60px 60px",
         }}
       />
 
@@ -25,13 +25,17 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="flex justify-center mb-8"
         >
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-violet-500/20 blur-2xl scale-150" />
             <div className="relative w-28 h-28 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl shadow-violet-900/30 backdrop-blur-sm">
-              <img src="/logo.png" alt="House of Darmoji" className="w-20 h-20 object-contain" />
+              <img
+                src="/logo.png"
+                alt="House of Darmoji"
+                className="w-20 h-20 object-contain"
+              />
             </div>
           </div>
         </motion.div>
@@ -43,8 +47,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.05 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-violet-500/20 text-sm text-violet-300 mb-8"
         >
-          <Sparkles size={14} className="text-violet-400" />
-          Tech-First Entrepreneurs · 25 Business Challenge
+          <FlaskConical size={14} className="text-violet-400" />
+          Technology-First Venture Studio · 25 Business Models
         </motion.div>
 
         {/* Headline */}
@@ -66,13 +70,14 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10"
         >
-          Two passionate technologists from Hyderabad on a mission to explore{' '}
-          <span className="text-white font-medium">25 different businesses</span> and learn the art
-          of entrepreneurship.
+          A technology-first venture studio building and validating{" "}
+          <span className="text-white font-medium">25 business models</span>{" "}
+          through rapid execution, real market testing, and disciplined
+          learning.
         </motion.p>
 
         {/* Location pill */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -80,7 +85,7 @@ export default function Hero() {
         >
           <MapPin size={13} className="text-violet-400" />
           Hyderabad, India
-        </motion.div>
+        </motion.div> */}
 
         {/* CTAs */}
         <motion.div
@@ -90,11 +95,14 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
-            href="#story"
+            href="#what-we-do"
             className="group flex items-center gap-2 px-7 py-3.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-all duration-200 shadow-xl shadow-violet-900/40 hover:shadow-violet-700/50 hover:-translate-y-0.5"
           >
-            Our Journey
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            How We Work
+            <ArrowRight
+              size={16}
+              className="group-hover:translate-x-1 transition-transform"
+            />
           </a>
           <a
             href="#challenge"
@@ -112,12 +120,14 @@ export default function Hero() {
           className="mt-20 grid grid-cols-3 gap-4 max-w-lg mx-auto"
         >
           {[
-            { value: '25', label: 'Business Models' },
-            { value: '2', label: 'Technologists' },
-            { value: '∞', label: 'Learning' },
+            { value: "25", label: "Business Models" },
+            { value: "2", label: "Founders" },
+            { value: "∞", label: "Opportunities" },
           ].map((stat) => (
             <div key={stat.label} className="glass rounded-2xl p-5 text-center">
-              <div className="text-3xl font-bold gradient-text mb-1">{stat.value}</div>
+              <div className="text-3xl font-bold gradient-text mb-1">
+                {stat.value}
+              </div>
               <div className="text-xs text-gray-500">{stat.label}</div>
             </div>
           ))}

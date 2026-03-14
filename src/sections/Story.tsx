@@ -1,27 +1,27 @@
-import { motion, type Variants } from 'framer-motion';
-import { Zap, TrendingUp, Target } from 'lucide-react';
+import { motion, type Variants } from "framer-motion";
+import { Zap, TrendingUp, Target } from "lucide-react";
 
 const pillars = [
   {
     icon: Zap,
-    title: 'Tech Excellence',
-    desc: 'Deep technical expertise in full-stack development and modern technologies.',
-    color: 'from-violet-500 to-indigo-600',
-    glow: 'shadow-violet-900/40',
+    title: "Tech Excellence",
+    desc: "Deep technical expertise in full-stack development and modern technologies.",
+    color: "from-violet-500 to-indigo-600",
+    glow: "shadow-violet-900/40",
   },
   {
     icon: TrendingUp,
-    title: 'Innovation Mindset',
-    desc: 'Always seeking creative solutions and better ways to solve real-world problems.',
-    color: 'from-emerald-500 to-teal-600',
-    glow: 'shadow-emerald-900/40',
+    title: "Innovation Mindset",
+    desc: "Always seeking creative solutions and better ways to solve real-world problems.",
+    color: "from-emerald-500 to-teal-600",
+    glow: "shadow-emerald-900/40",
   },
   {
     icon: Target,
-    title: '25 Business Challenge',
-    desc: 'An ambitious commitment to explore 25 business models and master entrepreneurship through execution.',
-    color: 'from-amber-500 to-orange-600',
-    glow: 'shadow-amber-900/40',
+    title: "25 Business Challenge",
+    desc: "An ambitious commitment to explore 25 business models and master entrepreneurship through execution.",
+    color: "from-amber-500 to-orange-600",
+    glow: "shadow-amber-900/40",
   },
 ];
 
@@ -65,8 +65,7 @@ export default function Story() {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6"
             >
-              From Tech to{' '}
-              <span className="gradient-text">Business</span>
+              From Tech to <span className="gradient-text">Business</span>
             </motion.h2>
 
             <motion.div
@@ -77,22 +76,29 @@ export default function Story() {
               className="space-y-4 text-gray-400 leading-relaxed"
             >
               <p>
-                We're not your typical Marwadi or Gujarati business family. We're{' '}
-                <span className="text-white font-medium">proudly pakka Hyderabadis</span> —
-                technologists who chose to navigate the business world armed with raw determination
-                and deep technical expertise, rather than inherited wealth or family networks.
+                We come from technical backgrounds rather than traditional
+                business lineages — two{" "}
+                <span className="text-white font-medium">
+                  engineers from India
+                </span>{" "}
+                who chose to enter the business world through experimentation,
+                execution, and disciplined learning rather than waiting for the
+                perfect opportunity.
               </p>
               <p>
-                Starting with zero business experience, we set ourselves an ambitious challenge:
-                explore{' '}
-                <span className="text-violet-300 font-medium">25 different business models</span>,
-                move fast, fail early, learn faster, and ultimately build something that creates
-                genuine and lasting value.
+                Starting without prior business experience, we set ourselves an
+                ambitious challenge: explore{" "}
+                <span className="text-violet-300 font-medium">
+                  25 different business models
+                </span>
+                , validate each through real market interaction, and ultimately
+                build ventures that create genuine and lasting value.
               </p>
               <p>
-                Every failed attempt sharpens our understanding of markets, customers, and what it
-                truly takes to build a sustainable business. We are not just engineering our way to
-                success — we are learning to think, act, and lead like entrepreneurs.
+                Every venture — successful or not — sharpens our understanding
+                of markets, customers, and sustainable business design. We are
+                not simply engineering our way to success; we are building the
+                instincts and frameworks that make great entrepreneurs.
               </p>
             </motion.div>
           </div>
@@ -116,7 +122,9 @@ export default function Story() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white mb-1">{p.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{p.desc}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {p.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
