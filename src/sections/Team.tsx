@@ -1,5 +1,11 @@
-import { motion } from 'framer-motion';
-import { Code2, GraduationCap, Briefcase, Link2, MessageCircle } from 'lucide-react';
+import { motion } from "framer-motion";
+import {
+  Code2,
+  GraduationCap,
+  Briefcase,
+  Link2,
+  MessageCircle,
+} from "lucide-react";
 
 // Inline SVGs for brand icons (lucide-react brand icons are deprecated)
 const GithubIcon = () => (
@@ -23,45 +29,61 @@ const XIcon = () => (
 
 const team = [
   {
-    name: 'Vineeth Reddy',
-    surname: 'Kancharakuntla',
-    role: 'Co-Founder · Full Stack Engineer',
-    avatar: 'VR',
-    gradient: 'from-violet-500 via-indigo-500 to-blue-600',
-    ring: 'ring-violet-500/30',
-    glow: 'shadow-violet-900/50',
-    bio: 'Full-stack engineer with professional industry experience building scalable systems and production-grade applications. Now directing that technical depth toward rapid product development and venture creation.',
+    name: "Vineeth Reddy",
+    surname: "Kancharakuntla",
+    role: "Co-Founder · Full Stack Engineer",
+    avatar: "VR",
+    gradient: "from-violet-500 via-indigo-500 to-blue-600",
+    ring: "ring-violet-500/30",
+    glow: "shadow-violet-900/50",
+    bio: "Full-stack engineer with professional industry experience building scalable systems and production-grade applications. Now directing that technical depth toward rapid product development and venture creation.",
     tags: [
-      { icon: Briefcase, label: '3+ Years Experience' },
-      { icon: Code2, label: 'Full Stack' },
-      { icon: Link2, label: 'Tech Lead' },
+      { icon: Briefcase, label: "3+ Years Experience" },
+      { icon: Code2, label: "Full Stack" },
+      { icon: Link2, label: "Tech Lead" },
     ],
-    tagColor: 'bg-violet-500/10 text-violet-300 border-violet-500/20',
+    tagColor: "bg-violet-500/10 text-violet-300 border-violet-500/20",
     socials: [
-      { Icon: GithubIcon, label: 'GitHub', href: 'https://github.com/eternalbasic1' },
-      { Icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/kancharakuntlavineethreddy/' },
-      { Icon: XIcon, label: 'X', href: 'https://x.com/KancharakuntlaV' },
+      {
+        Icon: GithubIcon,
+        label: "GitHub",
+        href: "https://github.com/eternalbasic1",
+      },
+      {
+        Icon: LinkedInIcon,
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/kancharakuntlavineethreddy/",
+      },
+      { Icon: XIcon, label: "X", href: "https://x.com/KancharakuntlaV" },
     ],
   },
   {
-    name: 'Aadarsh Reddy',
-    surname: 'Depa',
-    role: 'Co-Founder · AI/ML Engineer',
-    avatar: 'AD',
-    gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
-    ring: 'ring-emerald-500/30',
-    glow: 'shadow-emerald-900/50',
-    bio: 'Computer Science (AI & ML) specialist focused on emerging technologies and applied artificial intelligence. Brings analytical thinking, research depth, and a sharp instinct for identifying technology-driven opportunities.',
+    name: "Aadarsh Reddy",
+    surname: "Depa",
+    role: "Co-Founder · AI/ML Engineer",
+    avatar: "AD",
+    gradient: "from-emerald-500 via-teal-500 to-cyan-600",
+    ring: "ring-emerald-500/30",
+    glow: "shadow-emerald-900/50",
+    bio: "Computer Science (AI & ML) specialist focused on emerging technologies and applied artificial intelligence. Brings analytical thinking, research depth, and a sharp instinct for identifying technology-driven opportunities.",
     tags: [
-      { icon: GraduationCap, label: 'CSE (AI & ML)' },
-      { icon: Code2, label: 'Tech Savvy' },
-      { icon: MessageCircle, label: 'Future Ready' },
+      { icon: GraduationCap, label: "CSE (AI & ML)" },
+      { icon: Code2, label: "Tech Savvy" },
+      { icon: MessageCircle, label: "Future Ready" },
     ],
     socials: [
-      { Icon: GithubIcon, label: 'GitHub', href: 'https://github.com/aadarshreddydepa' },
-      { Icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aadarsh-reddy-depa-19b88722b/' },
+      {
+        Icon: GithubIcon,
+        label: "GitHub",
+        href: "https://github.com/aadarshreddydepa",
+      },
+      {
+        Icon: LinkedInIcon,
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/aadarsh-reddy-depa-19b88722b/",
+      },
     ],
-    tagColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
+    tagColor: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
   },
 ];
 
@@ -100,8 +122,8 @@ export default function Team() {
           transition={{ delay: 0.1 }}
           className="text-gray-400 max-w-xl mb-16"
         >
-          Two cousins united by technology, fuelled by ambition, and determined to make their mark
-          on the business world — one venture at a time.
+          Two cousins united by technology, fuelled by ambition, and determined
+          to make their mark on the business world — one venture at a time.
         </motion.p>
 
         {/* Cards */}
@@ -116,7 +138,9 @@ export default function Team() {
               className="glass rounded-3xl p-8 relative overflow-hidden group hover:border-white/12 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Card glow on hover */}
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.07] transition-opacity duration-500 bg-linear-to-br ${member.gradient} rounded-3xl`} />
+              <div
+                className={`absolute inset-0 opacity-0 group-hover:opacity-[0.07] transition-opacity duration-500 bg-linear-to-br ${member.gradient} rounded-3xl`}
+              />
 
               <div className="relative">
                 {/* Avatar + info */}
@@ -137,7 +161,9 @@ export default function Team() {
                 </div>
 
                 {/* Bio */}
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">{member.bio}</p>
+                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  {member.bio}
+                </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -180,14 +206,16 @@ export default function Team() {
             className="rounded-3xl p-8 border-2 border-dashed border-white/10 flex flex-col items-center justify-center text-center gap-4 min-h-80 hover:border-violet-500/30 transition-colors duration-300 group"
           >
             <div className="w-16 h-16 rounded-2xl border-2 border-dashed border-white/10 group-hover:border-violet-500/30 flex items-center justify-center transition-colors duration-300">
-              <span className="text-2xl text-white/20 group-hover:text-violet-400/50 transition-colors duration-300 font-bold">+</span>
+              <span className="text-2xl text-white/20 group-hover:text-violet-400/50 transition-colors duration-300 font-bold">
+                +
+              </span>
             </div>
             <div>
               <p className="text-white/40 font-semibold text-sm group-hover:text-white/60 transition-colors duration-300">
                 Growing the Team
               </p>
               <p className="text-white/20 text-xs mt-1 group-hover:text-white/40 transition-colors duration-300">
-                More great people joining soon
+                More people joining soon
               </p>
             </div>
           </motion.div>
@@ -201,10 +229,13 @@ export default function Team() {
           transition={{ delay: 0.3 }}
           className="mt-12 glass rounded-2xl p-8 text-center border border-violet-500/10"
         >
-          <div className="text-2xl font-bold text-white mb-2">Better Together</div>
+          <div className="text-2xl font-bold text-white mb-2">
+            Better Together
+          </div>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
-            Industry experience meets academic curiosity. Practical execution meets fresh perspective.
-            Together, we cover more ground — and learn faster.
+            Industry experience meets academic curiosity. Practical execution
+            meets fresh perspective. Together, we cover more ground — and learn
+            faster.
           </p>
         </motion.div>
       </div>
