@@ -20,6 +20,26 @@ const ventures = [
     comingSoon: false,
   },
   {
+    number: '02',
+    name: 'Insurance Advisory',
+    tagline: 'Advisory-First Insurance Platform for IT Professionals',
+    description:
+      'A production-grade personal insurance advisory website built to position the advisor as a trusted educator — not a salesperson. Targets Indian IT professionals navigating complex insurance decisions with a fintech aesthetic and full SEO setup.',
+    category: 'Fintech',
+    categoryColor: 'text-orange-400',
+    categoryBg: 'bg-orange-500/10',
+    status: 'Shipped',
+    statusColor: 'text-emerald-400',
+    statusBg: 'bg-emerald-500/10',
+    url: 'https://insuranceadvisory.houseofdarmoji.com',
+    highlights: [
+      'Myth vs Reality section debunking insurance misconceptions',
+      'Policy Health Check audit offering for coverage gaps',
+      'Full SEO setup — metadata, OpenGraph, sitemap',
+    ],
+    comingSoon: false,
+  },
+  {
     number: '??',
     name: 'Next Venture',
     tagline: 'Currently in ideation',
@@ -194,14 +214,14 @@ export default function Challenge() {
               <div className="text-gray-500 text-sm">Actively in progress — each venture builds on the last</div>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-bold gradient-text-warm">1 / 25</div>
+              <div className="text-2xl font-bold gradient-text-warm">2 / 25</div>
               <div className="text-gray-600 text-xs">Ventures completed</div>
             </div>
           </div>
           <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
-              whileInView={{ width: '4%' }}
+              whileInView={{ width: '8%' }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
               className="h-full bg-linear-to-r from-amber-500 to-orange-500 rounded-full"
